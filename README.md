@@ -2,7 +2,7 @@
 
 Screenshots:
 
-![header and results](https://github.com/ryan-hill83/Searchspring-Challenge/raw/main/public/images/screenshot1.png)
+![header and results](https://github.com/ryan-hill83/SS-Premium-Apparel/blob/main/public/images/screenshot1.png)
 
 Features:
 
