@@ -7,11 +7,12 @@ Screenshot:
 Features:
 
 - Sticky Header.
-- Header contains Search Bar, Search Categories, Sort Dropdown and Cart with Item Count.
-- Product cards contain Product Image, Product Title, Price, MSRP and ATC button.
-- Number of Results Displayed along with Search Query.
-- Pagination at bottom with Previous and Next Buttons.
-- Mobile Responsive.
+- Header contains 'Search Bar', 'Search Categories', 'Sort Dropdown' and 'Cart with Item Count'.
+- Product cards contain 'Product Image', 'Product Title', 'Price', 'MSRP' and 'ATC button'.
+- Number of results displayed along with search query.
+- Pagination at bottom with previous and next buttons.
+- Load default image if no product image loads.
+- Mobile responsive.
 
 This project is built with React and plain ol' CSS.
 
