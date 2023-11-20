@@ -4,6 +4,8 @@ Screenshot:
 
 ![header and results](https://github.com/ryan-hill83/SS-Premium-Apparel/blob/main/public/images/screenshot1.png)
 
+Preview: https://ss-premium-apparel.netlify.app/
+
 Features:
 
 - Sticky Header.
