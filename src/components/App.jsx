@@ -23,7 +23,6 @@ const App = () => {
           `http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=${query}&resultsFormat=native&resultsPerPage=19&page=${page}&sort=${sorting.field}=${sorting.direction}`
         );
         const data = await response.json();
-        console.log("data", data);
         setResults(data.results);
         setTotalPages(data.pagination.totalPages);
         setTotalResults(data.pagination.totalResults);
