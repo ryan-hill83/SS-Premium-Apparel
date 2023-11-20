@@ -35,6 +35,10 @@ const Results = ({ results, sorting, onAddToCart, query, total }) => {
                   className="product-image"
                   src={result.imageUrl}
                   alt={result.name}
+                  onError={(e) => {
+                    e.target.src =
+                      "https://cdn.searchspring.net/ajax_search/img/default_image.png";
+                  }}
                 />
               </a>
               <div className="details-wrapper">
