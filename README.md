@@ -1,5 +1,11 @@
 ## SS Premium Apparel
 
+Screenshots:
+
+![header and results](https://github.com/ryan-hill83/searchspring-challenge/raw/main/public/images/screenshot1.png)
+
+![pagination](https://github.com/ryan-hill83/searchspring-challenge/raw/main/public/images/screenshot2.png)
+
 Features:
 
 - Sticky Header.
@@ -10,3 +16,10 @@ Features:
 - Mobile Responsive.
 
 This project is built with React and good ol' plain CSS.
+
+Things I would have done differently with no time contraints:
+
+- Add Filtering.
+- Add Badges.
+- Use Scss.
+- Add Cypress tests.
