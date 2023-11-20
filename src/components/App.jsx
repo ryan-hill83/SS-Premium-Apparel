@@ -63,7 +63,6 @@ const App = () => {
     <div className="app-wrapper">
       <Header
         value={query}
-        // onChange={searchInput}
         onSearchButtonClick={handleSearchButtonClick}
         onSelectSorting={handleSortingChange}
         cartCount={cartCount}
