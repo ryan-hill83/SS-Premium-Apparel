@@ -20,7 +20,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=${query}&resultsFormat=native&resultsPerPage=18&page=${page}&sort=${sorting.field}=${sorting.direction}`
+          `http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=${query}&resultsFormat=native&resultsPerPage=19&page=${page}&sort=${sorting.field}=${sorting.direction}`
         );
         const data = await response.json();
         console.log("data", data);
