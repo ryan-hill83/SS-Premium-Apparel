@@ -1,10 +1,8 @@
-## git remote add origin https://github.com/yourusername/your-repo-name.git
+# SS Premium Apparel
 
 Screenshots:
 
 ![header and results](https://github.com/ryan-hill83/Searchspring-Challenge/raw/main/public/images/screenshot1.png)
-
-![pagination](https://github.com/ryan-hill83/Searchspring-Challenge/raw/main/public/images/screenshot2.png)
 
 Features:
 
@@ -15,7 +13,7 @@ Features:
 - Pagination at Bottom with Previous and Next Buttons.
 - Mobile Responsive.
 
-This project is built with React and good ol' plain CSS.
+This project is built with React and plain ol' CSS.
 
 Things I would have done differently with no time contraints:
 
