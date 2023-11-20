@@ -153,7 +153,10 @@ a {
     width: 100%;
   }
   .card-wrapper .details-wrapper .price-wrapper {
-    font-size: 12px;
+    font-size: 14px;
+  }
+  .card-wrapper .details-wrapper .price {
+    font-size: 14px;
   }
   .title-and-search .title {
     margin-right: auto;
@@ -203,10 +206,14 @@ a {
 
 @media (max-width: 1400px) {
   .title-and-price .product-title {
-    font-size: 15px;
+    font-size: 17px;
   }
   .title-and-price .price-wrapper {
-    font-size: 15px;
+    font-size: 17px;
+  }
+
+  .title-and-price .price {
+    font-size: 17px;
   }
 
   .details-wrapper .add-to-cart {
@@ -279,10 +286,21 @@ a {
   transform: scale(1.4);
 }
 
+.page-number[active="true"] {
+  font-weight: 900;
+  transform: scale(1.4);
+}
+
 .price-wrapper {
   display: flex;
   align-items: center;
-  font-size: 18px;
+  font-size: 20px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
 }
 
 .result img {

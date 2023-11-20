@@ -46,7 +46,7 @@ const Results = ({ results, sorting, onAddToCart, query, total }) => {
                       <span className="strikethrough">${result.msrp}</span>
                     </div>
                   ) : (
-                    <span>${result.price}</span>
+                    <span className="price">${result.price}</span>
                   )}
                 </div>
                 <div className="add-to-cart" onClick={onAddToCart}>

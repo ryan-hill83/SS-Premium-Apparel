@@ -6,6 +6,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     (_, i) => i + Math.max(currentPage - 1, 1)
   ).filter((pageNumber) => pageNumber <= totalPages);
 
+  console.log("currentPage", currentPage);
+
   return (
     <div className="pagination-container">
       <span className="page-info">
@@ -24,7 +26,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
             className="page-number"
             key={pageNumber}
             onClick={() => onPageChange(pageNumber)}
-            disabled={currentPage === pageNumber}
+            active={currentPage === pageNumber ? "true" : "false"}
           >
             {pageNumber}
           </div>
