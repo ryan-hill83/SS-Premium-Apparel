@@ -23,7 +23,7 @@ a {
   cursor: pointer;
   position: relative;
   right: 27px;
-  top: 5px;
+  top: 12px;
 }
 
 .header-wrapper {
@@ -50,10 +50,8 @@ a {
 }
 
 .cart {
-  margin-right: 25px;
   width: 50px;
   position: relative;
-  bottom: 4px;
 }
 
 .cart-icon {
@@ -86,6 +84,8 @@ a {
 #searchInput {
   border-radius: 15px;
   padding-left: 5px;
+  position: relative;
+  top: 7px;
 }
 
 .results-list {
@@ -107,7 +107,7 @@ a {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 40px 40px 0px 40px;
+  padding: 40px 40px 30px 40px;
   border: 1px solid #ddd;
   border-radius: 10px;
   cursor: pointer;
@@ -118,9 +118,123 @@ a {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 300px) {
+  html body {
+    display: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .app-wrapper .header-wrapper .sort-and-cart {
+    display: none;
+  }
+}
+
 @media (max-width: 767px) {
-  .result {
-    width: calc(50% - 20px);
+  .results-list .result {
+    width: calc(40% - 20px);
+    padding: 10px 10px 5px 10px;
+  }
+
+  .results-wrapper .results-list {
+    padding: unset;
+  }
+
+  .card-wrapper .details-wrapper .add-to-cart {
+    font-size: 10px;
+    align-self: center;
+    margin-top: 10px;
+  }
+
+  .card-wrapper .details-wrapper .product-title {
+    font-size: 14px;
+    display: flex;
+    width: 100%;
+  }
+  .card-wrapper .details-wrapper .price-wrapper {
+    font-size: 12px;
+  }
+  .title-and-search .title {
+    margin-right: auto;
+    margin-bottom: 5px;
+    position: relative;
+    left: -23px;
+  }
+  .title-text {
+    display: none;
+  }
+  .title-and-search {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+  }
+
+  .header-wrapper .title-and-search form {
+    margin-left: unset;
+  }
+  .sort-and-cart {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-right: 20px;
+    margin-bottom: -18px;
+  }
+  .app-wrapper .header-wrapper {
+    height: 100px;
+  }
+  .header-wrapper .sort-and-cart .cart {
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+    bottom: 8px;
+    right: -11px;
+  }
+
+  .sort-and-cart .dropdown-container {
+    top: 9px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .header-wrapper .header-category {
+    display: none;
+  }
+}
+
+@media (max-width: 1400px) {
+  .title-and-price .product-title {
+    font-size: 15px;
+  }
+  .title-and-price .price-wrapper {
+    font-size: 15px;
+  }
+
+  .details-wrapper .add-to-cart {
+    font-size: 12px;
+  }
+
+  .app-wrapper .header-wrapper .title-and-search {
+    width: unset;
+  }
+
+  .title-and-search form {
+    margin-left: 15px;
+  }
+
+  .app-wrapper .header-wrapper .sort-and-cart {
+    width: unset;
+  }
+
+  .sort-and-cart .cart {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 1700px) {
+  .card-wrapper .details-wrapper {
+    flex-direction: column;
+  }
+  .header-wrapper .title-and-search {
+    width: 33%;
   }
 }
 
@@ -189,7 +303,7 @@ a {
 .add-to-cart {
   align-self: flex-end;
   position: relative;
-  bottom: 43px;
+  bottom: 3px;
   padding: 10px;
   border: 1px solid black;
   border-radius: 20px;
@@ -200,20 +314,44 @@ a {
 }
 
 .add-to-cart:active {
-  transform: scale(0.95); /* Add a slight scale effect when clicked */
-  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); /* Adjust the box-shadow on click */
+  transform: scale(0.95);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
   color: #a9b0ba;
 }
 
 .product-image {
   max-width: 100%;
   height: auto;
-  border: 2px solid #ddd; /* Set the border color */
-  border-radius: 10px; /* Adjust the border radius for a rounded appearance */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .title-and-price {
   margin-top: 10px;
+}
+
+.details-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-and-search {
+  display: flex;
+  justify-content: space-between;
+  width: 29%;
+}
+
+.sort-and-cart {
+  display: flex;
+  justify-content: space-between;
+  width: 15%;
+  bottom: 3px;
+  position: relative;
+}
+
+.dropdown-container {
+  position: relative;
+  top: 7px;
 }

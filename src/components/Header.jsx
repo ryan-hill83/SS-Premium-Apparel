@@ -33,33 +33,35 @@ const Header = ({
 
   return (
     <div className="header-wrapper">
-      <span className="title">
-        <img
-          className="ss-icon"
-          src={require("../resources/ss.jpg")}
-          alt="ss-icon"
-          height="40px"
-          width="40px"
-        />
-        Premium Apparel
-      </span>
-      <form onSubmit={handleFormSubmit}>
-        <input
-          id="searchInput"
-          type="text"
-          value={showButtonText ? searchTerm : ""}
-          onChange={handleInputChange}
-          placeholder=" Search"
-        />
-        <button type="submit" className="search-icon">
+      <div className="title-and-search">
+        <span className="title">
           <img
-            src={require("../resources/magnifying-glass.png")}
-            alt="search"
-            height="17px"
-            width="17px"
+            className="ss-icon"
+            src={require("../resources/ss.jpg")}
+            alt="ss-icon"
+            height="40px"
+            width="40px"
           />
-        </button>
-      </form>
+          <span className="title-text">Premium Apparel</span>
+        </span>
+        <form onSubmit={handleFormSubmit}>
+          <input
+            id="searchInput"
+            type="text"
+            value={showButtonText ? searchTerm : ""}
+            onChange={handleInputChange}
+            placeholder=" Search"
+          />
+          <button type="submit" className="search-icon">
+            <img
+              src={require("../resources/magnifying-glass.png")}
+              alt="search"
+              height="17px"
+              width="17px"
+            />
+          </button>
+        </form>
+      </div>
       <div
         className="header-category"
         onClick={() => handleButtonClick("Jackets")}
@@ -90,17 +92,19 @@ const Header = ({
       >
         Bags
       </div>
-      <Sort onSelectSorting={onSelectSorting} />
-      <span className="cart">
-        <img
-          className="cart-icon"
-          src={require("../resources/cart.png")}
-          alt="cart"
-          height="25px"
-          width="25px"
-        />{" "}
-        {cartCount}
-      </span>
+      <div className="sort-and-cart">
+        <Sort onSelectSorting={onSelectSorting} />
+        <span className="cart">
+          <img
+            className="cart-icon"
+            src={require("../resources/cart.png")}
+            alt="cart"
+            height="25px"
+            width="25px"
+          />{" "}
+          {cartCount}
+        </span>
+      </div>
     </div>
   );
 };

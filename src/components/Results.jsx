@@ -29,13 +29,15 @@ const Results = ({ results, sorting, onAddToCart, query, total }) => {
       <ul className="results-list">
         {sortedResults.map((result) => (
           <li className="result" key={result.id}>
-            <div className="details-wrapper">
+            <div className="card-wrapper">
               <a href={result.url} target="_blank" rel="noreferrer">
                 <img
                   className="product-image"
                   src={result.imageUrl}
                   alt={result.name}
                 />
+              </a>
+              <div className="details-wrapper">
                 <div className="title-and-price">
                   <span className="product-title">{result.name}</span>
                   {result.msrp && result.msrp > result.price ? (
@@ -47,10 +49,10 @@ const Results = ({ results, sorting, onAddToCart, query, total }) => {
                     <span>${result.price}</span>
                   )}
                 </div>
-              </a>
-            </div>
-            <div className="add-to-cart" onClick={onAddToCart}>
-              Add to Cart
+                <div className="add-to-cart" onClick={onAddToCart}>
+                  Add to Cart
+                </div>
+              </div>
             </div>
           </li>
         ))}
