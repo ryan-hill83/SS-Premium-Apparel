@@ -7,28 +7,36 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   ).filter((pageNumber) => pageNumber <= totalPages);
 
   return (
-    <div>
-      <p>
+    <div className="pagination-container">
+      <span className="page-info">
         Page {currentPage} of {totalPages}
-      </p>
-      <button onClick={() => onPageChange("prev")} disabled={currentPage === 1}>
-        Previous
-      </button>
-      {visiblePages.map((pageNumber) => (
-        <button
-          key={pageNumber}
-          onClick={() => onPageChange(pageNumber)}
-          disabled={currentPage === pageNumber}
+      </span>
+      <div className="pagination">
+        <div
+          className="previous-or-next"
+          onClick={() => onPageChange("prev")}
+          disabled={currentPage === 1}
         >
-          {pageNumber}
-        </button>
-      ))}
-      <button
-        onClick={() => onPageChange("next")}
-        disabled={currentPage === totalPages}
-      >
-        Next
-      </button>
+          Previous
+        </div>
+        {visiblePages.map((pageNumber) => (
+          <div
+            className="page-number"
+            key={pageNumber}
+            onClick={() => onPageChange(pageNumber)}
+            disabled={currentPage === pageNumber}
+          >
+            {pageNumber}
+          </div>
+        ))}
+        <div
+          className="previous-or-next"
+          onClick={() => onPageChange("next")}
+          disabled={currentPage === totalPages}
+        >
+          Next
+        </div>
+      </div>
     </div>
   );
 };

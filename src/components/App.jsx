@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Pagination from "./Pagination";
 import Results from "./Results";
-import Sort from "./Sort";
-import "../styles/styles.css";
 
 const App = () => {
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [results, setResults] = useState([]);
+  const [totalResults, setTotalResults] = useState(0);
   const [sorting, setSorting] = useState({
     field: "relevance",
     direction: "desc",
@@ -21,11 +20,13 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          `http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=${query}&resultsFormat=native&page=${page}&sort=${sorting.field}=${sorting.direction}`
+          `http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=${query}&resultsFormat=native&resultsPerPage=18&page=${page}&sort=${sorting.field}=${sorting.direction}`
         );
         const data = await response.json();
+        console.log("data", data);
         setResults(data.results);
         setTotalPages(data.pagination.totalPages);
+        setTotalResults(data.pagination.totalResults);
       } catch (error) {
         console.error("Error fetching data -", error);
       }
@@ -33,11 +34,6 @@ const App = () => {
 
     fetchData();
   }, [query, page, sorting]);
-
-  const searchInput = (event) => {
-    setQuery(event.target.value);
-    setPage(1);
-  };
 
   const handlePageChange = (selectedPage) => {
     if (selectedPage === "prev") {
@@ -65,18 +61,20 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="app-wrapper">
       <Header
         value={query}
-        onChange={searchInput}
+        // onChange={searchInput}
         onSearchButtonClick={handleSearchButtonClick}
+        onSelectSorting={handleSortingChange}
         cartCount={cartCount}
       />
-      <Sort onSelectSorting={handleSortingChange} />
       <Results
         results={results}
         sorting={sorting}
         onAddToCart={handleAddToCart}
+        query={query}
+        total={totalResults}
       />
       <Pagination
         currentPage={page}

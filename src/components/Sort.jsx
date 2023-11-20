@@ -18,11 +18,13 @@ const Sort = ({ onSelectSorting }) => {
   };
 
   return (
-    <div>
-      <label htmlFor="sorting">Sort By:</label>
+    <div className="dropdown-container">
+      <label className="sort-label" htmlFor="sorting">
+        Sort By
+      </label>
       <select id="sorting" onChange={handleSortingChange}>
         {sortingOptions.map((option) => (
-          <option key={option.label} value={option.label}>
+          <option key={option.label} value={option.label} className="option">
             {option.label}
           </option>
         ))}

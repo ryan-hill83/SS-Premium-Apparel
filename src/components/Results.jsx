@@ -1,11 +1,9 @@
 import React from "react";
 
-const Results = ({ results, sorting, onAddToCart }) => {
-  // Function to sort results based on the selected sorting option
+const Results = ({ results, sorting, onAddToCart, query, total }) => {
   const sortResults = () => {
-    // Assuming that 'relevance' is the default sorting field
     if (sorting.field === "relevance") {
-      return results; // No need to sort if it's the default sorting
+      return results;
     }
 
     return [...results].sort((a, b) => {
@@ -22,22 +20,38 @@ const Results = ({ results, sorting, onAddToCart }) => {
   const sortedResults = sortResults();
 
   return (
-    <div>
-      <h2>Search Results</h2>
-      <ul>
+    <div className="results-wrapper">
+      {query ? (
+        <div className="results-header">
+          {total} Results for "{query}"
+        </div>
+      ) : null}
+      <ul className="results-list">
         {sortedResults.map((result) => (
-          <li key={result.id}>
-            <img src={result.imageUrl} alt={result.name} />
-            <span>{result.name}</span>
-            {result.msrp && result.msrp > result.price ? (
-              <>
-                <span>${result.price}</span>
-                <span className="strikethrough">${result.msrp}</span>
-              </>
-            ) : (
-              <span>${result.price}</span>
-            )}
-            <button onClick={onAddToCart}>Add to Cart</button>
+          <li className="result" key={result.id}>
+            <div className="details-wrapper">
+              <a href={result.url} target="_blank" rel="noreferrer">
+                <img
+                  className="product-image"
+                  src={result.imageUrl}
+                  alt={result.name}
+                />
+                <div className="title-and-price">
+                  <span className="product-title">{result.name}</span>
+                  {result.msrp && result.msrp > result.price ? (
+                    <div className="price-wrapper">
+                      <span>${result.price}</span>
+                      <span className="strikethrough">${result.msrp}</span>
+                    </div>
+                  ) : (
+                    <span>${result.price}</span>
+                  )}
+                </div>
+              </a>
+            </div>
+            <div className="add-to-cart" onClick={onAddToCart}>
+              Add to Cart
+            </div>
           </li>
         ))}
       </ul>

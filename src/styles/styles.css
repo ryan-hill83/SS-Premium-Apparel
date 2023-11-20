@@ -1,3 +1,219 @@
+body {
+  margin: 0;
+  font-family: "Pathway Gothic One", sans-serif;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .strikethrough {
+  margin-left: 10px;
   text-decoration: line-through;
+  color: #888;
+}
+
+.search-icon {
+  height: 20px;
+  width: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  right: 27px;
+  top: 5px;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.9);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(#3a23ad, #1d1257);
+  color: #fff;
+  z-index: 2;
+}
+
+.title {
+  margin-left: 25px;
+  display: flex;
+  align-items: center;
+  font-family: "Ephesis", cursive;
+  font-size: 29px;
+}
+
+.cart {
+  margin-right: 25px;
+  width: 50px;
+  position: relative;
+  bottom: 4px;
+}
+
+.cart-icon {
+  position: relative;
+  top: 4px;
+}
+
+.ss-icon {
+  margin-right: 10px;
+}
+
+.sort-label {
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.header-category {
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.header-category:hover {
+  color: #a9b0ba;
+}
+
+#sorting {
+  border-radius: 15px;
+}
+
+#searchInput {
+  border-radius: 15px;
+  padding-left: 5px;
+}
+
+.results-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  justify-content: center;
+}
+
+.results-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.result {
+  width: calc(30% - 20px);
+  margin: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 40px 0px 40px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #f2f0f0;
+}
+
+.result:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 767px) {
+  .result {
+    width: calc(50% - 20px);
+  }
+}
+
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.page-info {
+  margin-bottom: 20px;
+}
+
+.previous-or-next[disabled] {
+  color: #a9b0ba;
+}
+
+.previous-or-next[disabled]:hover {
+  transform: unset;
+}
+
+.previous-or-next:hover {
+  font-weight: 900;
+  transform: scale(1.1);
+}
+
+.page-number {
+  padding: 0 15px;
+}
+
+.page-number:hover {
+  font-weight: 900;
+  transform: scale(1.4);
+}
+
+.price-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.result img {
+  max-width: 100%;
+  height: auto;
+}
+
+.results-header {
+  align-self: center;
+  margin: 40px auto 0 auto;
+  font-size: 20px;
+}
+
+.product-title {
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.add-to-cart {
+  align-self: flex-end;
+  position: relative;
+  bottom: 43px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  color: white;
+  background: linear-gradient(#3a23ad, #1d1257);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+}
+
+.add-to-cart:active {
+  transform: scale(0.95); /* Add a slight scale effect when clicked */
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); /* Adjust the box-shadow on click */
+  color: #a9b0ba;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd; /* Set the border color */
+  border-radius: 10px; /* Adjust the border radius for a rounded appearance */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.title-and-price {
+  margin-top: 10px;
 }
