@@ -36,11 +36,9 @@ const App = () => {
 
   const handlePageChange = (selectedPage) => {
     if (selectedPage === "prev") {
-      setPage((prevPage) => prevPage - 1);
-      return;
+      setPage((prevPage) => Math.max(prevPage - 1, 1));
     } else if (selectedPage === "next") {
-      setPage((prevPage) => prevPage + 1);
-      return;
+      setPage((prevPage) => Math.min(prevPage + 1, totalPages));
     } else {
       setPage(selectedPage);
     }
