@@ -347,6 +347,11 @@ a {
   transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
+.product-image[src="https://cdn.searchspring.net/ajax_search/img/default_image.png"]
+{
+  height: 274px;
+}
+
 .title-and-price {
   margin-top: 10px;
 }
