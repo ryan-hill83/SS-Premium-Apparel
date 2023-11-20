@@ -1,6 +1,6 @@
 import React from "react";
 
-const Results = ({ results, sorting }) => {
+const Results = ({ results, sorting, onAddToCart }) => {
   // Function to sort results based on the selected sorting option
   const sortResults = () => {
     // Assuming that 'relevance' is the default sorting field
@@ -28,9 +28,16 @@ const Results = ({ results, sorting }) => {
         {sortedResults.map((result) => (
           <li key={result.id}>
             <img src={result.imageUrl} alt={result.name} />
-            <p>{result.name}</p>
-            <p>${result.price}</p>
-            <p>${result.msrp}</p>
+            <span>{result.name}</span>
+            {result.msrp && result.msrp > result.price ? (
+              <>
+                <span>${result.price}</span>
+                <span className="strikethrough">${result.msrp}</span>
+              </>
+            ) : (
+              <span>${result.price}</span>
+            )}
+            <button onClick={onAddToCart}>Add to Cart</button>
           </li>
         ))}
       </ul>

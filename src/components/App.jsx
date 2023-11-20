@@ -3,6 +3,7 @@ import Header from "./Header";
 import Pagination from "./Pagination";
 import Results from "./Results";
 import Sort from "./Sort";
+import "../styles/styles.css";
 
 const App = () => {
   const [query, setQuery] = useState("");
@@ -14,6 +15,7 @@ const App = () => {
     direction: "desc",
     label: "Best Match",
   });
+  const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,7 +24,6 @@ const App = () => {
           `http://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=${query}&resultsFormat=native&page=${page}&sort=${sorting.field}=${sorting.direction}`
         );
         const data = await response.json();
-        console.log("data---", data);
         setResults(data.results);
         setTotalPages(data.pagination.totalPages);
       } catch (error) {
@@ -54,11 +55,29 @@ const App = () => {
     setSorting(selectedSorting);
   };
 
+  const handleSearchButtonClick = (searchQuery) => {
+    setQuery(searchQuery);
+    setPage(1);
+  };
+
+  const handleAddToCart = () => {
+    setCartCount((prevCount) => prevCount + 1);
+  };
+
   return (
     <div>
-      <Header value={query} onChange={searchInput} />
+      <Header
+        value={query}
+        onChange={searchInput}
+        onSearchButtonClick={handleSearchButtonClick}
+        cartCount={cartCount}
+      />
       <Sort onSelectSorting={handleSortingChange} />
-      <Results results={results} sorting={sorting} />
+      <Results
+        results={results}
+        sorting={sorting}
+        onAddToCart={handleAddToCart}
+      />
       <Pagination
         currentPage={page}
         totalPages={totalPages}
