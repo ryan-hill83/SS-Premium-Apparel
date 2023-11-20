@@ -1,10 +1,10 @@
-## SS Premium Apparel
+## git remote add origin https://github.com/yourusername/your-repo-name.git
 
 Screenshots:
 
-![header and results](https://github.com/ryan-hill83/searchspring-challenge/raw/main/public/images/screenshot1.png)
+![header and results](https://github.com/ryan-hill83/Searchspring-Challenge/raw/main/public/images/screenshot1.png)
 
-![pagination](https://github.com/ryan-hill83/searchspring-challenge/raw/main/public/images/screenshot2.png)
+![pagination](https://github.com/ryan-hill83/Searchspring-Challenge/raw/main/public/images/screenshot2.png)
 
 Features:
 
